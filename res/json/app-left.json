@@ -1,0 +1,37 @@
+{
+  "leftItem": [
+    {
+      "name": "用户管理",
+      "subName": [
+        {"name": "用户列表","subUrl": "userList"},
+        {"name": "用户统计","subUrl": "userCollect"}
+      ]
+    },
+    {
+      "name": "产品管理",
+      "subName": [
+        {"name": "产品列表","subUrl": "productList"}
+      ]
+    },
+    {
+      "name": "订单管理",
+      "subName": [
+        {"name": "订单列表","subUrl": "orderList"}
+      ]
+    },
+    {
+      "name": "文章管理",
+      "subName": [
+        {"name": "文章列表","subUrl": "articleList"},
+        {"name": "文章栏目","subUrl": "articleColumn"}
+      ]
+    },
+    {
+      "name": "相册管理",
+      "subName": [
+        {"name": "相册列表","subUrl": "photoList"},
+        {"name": "相册栏目","subUrl": "photoColumn"}
+      ]
+    }
+  ]
+}

@@ -23,7 +23,7 @@ var gulp = require('gulp'),
 
 var srcScript = 'dev/script/*.js',
     
-    dstScript = 'res/script',
+    dstScript = 'res/script/',
     
     srcLib = 'dev/lib/**/*.*',
     
@@ -31,19 +31,23 @@ var srcScript = 'dev/script/*.js',
     
     srcCss = 'dev/css/*.css',
     
-    dstCSS = 'res/css',
+    dstCSS = 'res/css/',
     
     srcLess = 'dev/css/*.less',
     
-    dstLess = 'res/css',
+    dstLess = 'res/css/',
     
     srcImage = 'dev/img/*.*',
     
-    dstImage = 'res/img',
+    dstImage = 'res/img/',
     
     srcHtml = 'dev/**/*.html',
     
-    dstHtml = 'res/*.html';
+    dstHtml = 'res/';
+
+    srcJson = 'dev/**/*.json',
+    
+    dstJson = 'res/';
 
 
 //处理JS文件:压缩,然后换个名输出;
@@ -154,6 +158,14 @@ gulp.task('html', function ()
         .pipe(gulp.dest(dstHtml));
     
 });
+gulp.task('json', function ()
+{
+    
+    gulp.src(srcJson)
+        
+        .pipe(gulp.dest(dstJson));
+    
+});
 gulp.task('lib', function ()
 {
     
@@ -197,6 +209,8 @@ gulp.task('auto', function ()
     
     gulp.watch(srcLib, ['lib']);
     
+    gulp.watch(srcJson, ['json']);
+    
     gulp.watch(['dev/**/*.*','index.html']).on('change', browserSync.reload);
     
 });
@@ -204,7 +218,7 @@ gulp.task('auto', function ()
 
 //gulp默认任务(集体走一遍,然后开监控);
 
-gulp.task('default', ['script', 'css', 'less', 'imgmin', 'html', 'lib', 'server', 'auto']);
+gulp.task('default', ['script', 'css', 'less', 'imgmin', 'html', 'lib', 'json', 'server', 'auto']);
 gulp.task('-h',function(){
     console.log("'gulp -h' ------------")
 })

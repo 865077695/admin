@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .title{background: #5bc0de;padding:10px 5px;cursor:pointer;}
+        .body{padding:20px;background: #a6e1ec;border:1px solid #000000}
+    </style>
+</head>
+<body ng-app="expanderModule" ng-controller="expanderCtrl">
+<!--因为scope内参数加了=标识，也就是参数数据是双向绑定，所以这里title不加双花括号-->
+<expander expander-title="title">
+    -----{{ text }}
+</expander>
+
+<script src="https://cdn.bootcss.com/angular.js/1.3.20/angular.min.js"></script>
+<script>
+    var expanderModule = angular.module('expanderModule',[]);
+    
+    expanderModule.directive('expander',function(){
+        return {
+            resctrict:'E',
+            replace:true,
+            transclude:true,
+            scope:{
+                title:'=expanderTitle'//将指令标签expander内的expander-title属性的值（这个值明显是在父作用域下）和指令作用域下的title双向绑定
+            },
+            template:'<div>' +
+            '<div class="title" ng-click="toggle()">{{ title }}</div>' +
+            '<div class="body" ng-transclude ng-show="showMe"></div>' +//ng-transclude作用是把这个指令（expander）标签内部原有的东西保留下来，放在这个位置
+            '</div>',
+            link:function(scope,ele,attr){
+                scope.showMe = false;
+                scope.toggle=function(){
+                    scope.showMe = !scope.showMe;
+                };
+            }
+        }
+    });
+    expanderModule.controller('expanderCtrl',function($scope){
+        $scope.title="这个是在父作用域内定义，但是绑定到子作用域里，通过子作用域数据展示到视图的"
+        $scope.text="这部分是通过设置transclude=true保留下来的，在父作用域内定义的，和指令作用域没有什么关系"
+    })
+</script>
+</body>
+</html>

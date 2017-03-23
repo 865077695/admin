@@ -1,0 +1,33 @@
+<div>
+    <p class="content-title">用户列表</p>
+    <div class="content-body">
+        <table class="table table-bordered table-responsive">
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>电话</th>
+                <th>身份证号</th>
+                <th>邮箱</th>
+                <th>地址</th>
+                <th>加入时间</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            <tr ng-repeat="user in userList">
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.sex }}</td>
+                <td>{{ user.mobile }}</td>
+                <td>{{ user.idCard }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.address }}</td>
+                <td>{{ user.joinTime }}</td>
+                <td ng-bind="user.status?'在线':'离线'"></td>
+                <td></td>
+            </tr>
+        </table>
+        <button class="btn btn-default" ng-disabled="userList[0].id<10" ng-click="prevPage()">上一页</button>
+        <button class="btn btn-default pull-right" ng-disabled="userList[0].id>10" ng-click="nextPage()">下一页</button>
+    </div>
+</div>

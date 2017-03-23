@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>service</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body ng-app="MyService">
+<div ng-controller="ServiceController">
+    <label>用户名</label>
+    <input type="text" class="form-control" ng-model="username" placeholder="请输入用户名" />
+    <pre ng-show="username">{{ users }}</pre>
+    <pre ng-show="username">{{ status }}</pre>
+</div>
+
+<script src="https://cdn.bootcss.com/angular.js/1.3.20/angular.min.js"></script>
+<script>
+    var MyService = angular.module('MyService',[]);
+    MyService.factory('userListService',function($http){
+        var doRequest = function(username,path){
+            return $http({
+                method: 'GET',
+                url: path || 'users.json'
+            });
+        }
+        return {
+            userList:function(username,path){
+                return doRequest(username,path);
+            }
+        }
+    }).controller('ServiceController',function($scope,$timeout,userListService){
+        var inteval;
+        $scope.$watch('username',function(newUsername){ //检查值是否变化，是否有新的username生成
+            if(newUsername){
+                if(inteval){
+                    $timeout.cancel(inteval);
+                }
+            };
+            inteval = $timeout(function(){
+                userListService.userList(newUsername)
+                        .success(function(data,status){
+                            $scope.users = data;
+                            $scope.status = status;
+                        })
+            },350)
+        })
+    })
+</script>
+</body>
+</html>
