@@ -8,7 +8,7 @@ window.loading={
         callback();
     },
     load:function(){
-        var domain='./';
+        var domain='https://865077695.github.io/admin/';
         baseUrl = domain+'res';
         require.config({
             baseUrl:baseUrl,
