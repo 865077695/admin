@@ -8,7 +8,7 @@ window.loading={
         callback();
     },
     load:function(){
-        var domain='admin'+'/';
+        var domain='./';
         baseUrl = domain+'res';
         require.config({
             baseUrl:baseUrl,
