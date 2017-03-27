@@ -9,7 +9,7 @@ window.loading={
     },
     load:function(){
         var domain=''+'/';
-        baseUrl = domain+'res';
+        baseUrl = domain+'dev';
         require.config({
             baseUrl:baseUrl,
             paths:{
@@ -17,16 +17,8 @@ window.loading={
                 "layer":"lib/layer/layer",
                 "angular":"lib/angular/angular",
                 "uiRouter":"lib/angular/angular-ui-router",
-                "angular-nice-bar":"lib/angular/angular-nice-bar",
-                "asyncLoader":"lib/angular/angular-async-loader",
                 "jquery":"lib/jquery/jquery.min",
-                "loadCss":"script/loadCss",
-                "routes":"script/routes",
-                "app":"script/app",
-                "index":"script/index",
-                "superController":"script/superController",
-                "myService":"script/myService",
-                "myDirective":"script/myDirective"
+                "loadCss":"script/loadCss"
             },
             shim:{
                 "angular":{
@@ -37,14 +29,10 @@ window.loading={
                 },
                 "layer":{
                     exports:"layer"
-                },
-                "angular-nice-bar":{
-                    deps:["angular"]
                 }
             },
-            deps:['index']
-        });
+            deps:['script/index']
+        })
     }
-    
 }
 window.loading.load();

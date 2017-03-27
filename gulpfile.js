@@ -41,7 +41,7 @@ var srcScript = 'dev/script/*.js',
     
     dstImage = 'res/img/',
     
-    srcHtml = 'dev/**/*.html',
+    srcHtml = 'dev/**/*.*',
     
     dstHtml = 'res/';
 

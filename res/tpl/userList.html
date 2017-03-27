@@ -1,7 +1,7 @@
 <div>
     <p class="content-title">用户列表</p>
     <div class="content-body">
-        <table class="table table-bordered table-responsive">
+        <table class="table table-bordered">
             <tr>
                 <th>ID</th>
                 <th>姓名</th>
@@ -22,7 +22,7 @@
                 <td>{{ user.idCard }}</td>
                 <td>{{ user.email }}</td>
                 <td>{{ user.address }}</td>
-                <td>{{ user.joinTime }}</td>
+                <td ng-bind="user.joinTime | date : 'yyyy-MM-dd'"></td>
                 <td ng-bind="user.status?'在线':'离线'"></td>
                 <td></td>
             </tr>

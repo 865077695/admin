@@ -1,1 +1,27 @@
-define(["require","angular","layer","uiRouter"],function(t,e,r){var o=e.module("app",["ui.router"]);r.config({path:"./res/lib/layer/"});var l=r.load(1,{shade:[.1,"#fff"],area:["37px","37px"]});t(["domReady!"],function(t){e.bootstrap(t,["app"]),window.loading.finish(function(){r.close(l)})}),o.factory("myService",function(t){var e={};return e.getJson=function(e){return t({method:"GET",url:e})},e}),o.controller("AppController",function(t,e){e.getJson("res/json/topNavitems.json").success(function(e){t.topNavItem=e.navItem}).error(function(){console.log("error...")}),e.getJson("res/json/app-left.json").success(function(e){t.leftItem=e.leftItem})}),o.directive("appTop",function(){return{restrict:"E",replace:!0,scope:{topNavItem:"=headerItem"},templateUrl:"res/tpl/header.html"}}),o.directive("appLeft",function(){return{restrict:"E",replace:!0,transclude:!0,scope:{leftItem:"=leftItem"},controller:function(t){this.Name=t},templateUrl:"res/tpl/app-left.html",link:function(t,e,r){t.toggle=function(e){t.leftItem[e].isShow=!t.leftItem[e].isShow,console.log(t.leftItem)}}}}),o.directive("appContent",function(){return{require:"^appLeft",restrict:"E",replace:!0,scope:{leftItem:"=leftItem"},templateUrl:"res/tpl/app-content.html",link:function(t,e,r,o){console.log(t.leftItem)}}}),o.config(function(t,e){e.otherwise("/home"),t.state("home",{url:"/home",templateUrl:"res/tpl/home.html"}).state("userList",{url:"/userList",templateUrl:"res/tpl/userList.html",controller:function(t,e){var r=function(r){e.getJson(r).success(function(e){t.userList=e.userList,console.log(t.userList)}).error(function(){console.log("error...")})};r("res/json/userList1.json"),t.prevPage=function(){r("res/json/userList1.json")},t.nextPage=function(){r("res/json/userList2.json")}}}).state("userCollect",{url:"/userCollect",templateUrl:"res/tpl/userCollect.html"}).state("productList",{url:"/productList",templateUrl:"res/tpl/productList.html"}).state("orderList",{url:"/orderList",templateUrl:"res/tpl/orderList.html"}).state("articleList",{url:"/articleList",templateUrl:"res/tpl/articleList.html"}).state("articleColumn",{url:"/articleColumn",templateUrl:"res/tpl/articleColumn.html"}).state("photoList",{url:"/photoList",templateUrl:"res/tpl/photoList.html"}).state("photoColumn",{url:"/photoColumn",templateUrl:"res/tpl/photoColumn.html"})})});
+/**
+ * Created by zzq on 2017/3/17.
+ */
+define(["require", "angular", "layer","routes",'myDirective'], function (require, angular, layer)
+{
+    console.log('index.js');
+    layer.config({
+        path: './res/lib/layer/'              //layer.js的文件路径,注意加斜杠
+    });
+    var loadDom = layer.load(1, {
+        shade: [0.1, '#fff'], //0.1透明度的白色背景
+        area: ['37px', '37px']
+    });
+    
+    
+    require(['domReady!'], function (document)
+    {     //domReady依赖的!前缀来强制require()回调函数在执行之前等待DOM Ready。
+        
+        /*手工启动angular*/
+        window.loading.finish(function ()
+        {
+            angular.bootstrap(document,['app']);
+            layer.close(loadDom);
+            
+        });
+    });
+})

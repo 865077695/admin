@@ -18,5 +18,8 @@
     "imagemin-jpeg-recompress": "^5.1.0",
     "imagemin-optipng": "^5.2.1",
     "uglify": "^0.1.5"
+  },
+  "dependencies": {
+    "angular-echarts": "^0.3.6"
   }
 }

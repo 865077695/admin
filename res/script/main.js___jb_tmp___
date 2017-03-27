@@ -17,7 +17,7 @@ window.loading={
                 "layer":"lib/layer/layer",
                 "angular":"lib/angular/angular",
                 "uiRouter":"lib/angular/angular-ui-router",
-                "angular-nice-bar":"lib/angular/angular-nice-bar",
+                "angular-nice-bar":"lib/angular/ngScrollbar",
                 "asyncLoader":"lib/angular/angular-async-loader",
                 "jquery":"lib/jquery/jquery.min",
                 "loadCss":"script/loadCss",
@@ -38,7 +38,7 @@ window.loading={
                 "layer":{
                     exports:"layer"
                 },
-                "angular-nice-bar":{
+                "ngScrollbar":{
                     deps:["angular"]
                 }
             },

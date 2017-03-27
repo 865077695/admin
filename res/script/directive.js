@@ -1,0 +1,1 @@
+define(["require","app","myService"],function(o,e){console.log("directive"),console.log(e),e.directive("appTop",function(){return console.log(222222),{restrict:"AE",replace:!1,template:"hello",controller:function(o,e,n,c){console.log(111),c.getJson("res/json/topNavitems.json").success(function(o){console.log(o)})},link:function(o,e,n){console.log(1)}}})});
