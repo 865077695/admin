@@ -13,7 +13,7 @@ define(['require','app','myService'],function(require,app,myService){
             templateUrl: 'res/tpl/header.html',
             controller: function($scope,myService){
                 console.log(111);
-                myService.getJson('res/json/topNavitems.json')
+                myService.getJson('res/json/topNavItems.json')
                     .success(function(data){
                         console.log(data)
                         $scope.topNavItem = data.navItem;
