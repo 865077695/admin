@@ -1,1 +1,1 @@
-define(function(){return{loadCss:function(e){var n,t;n=document.createElement("link"),n.rel="stylesheet",n.href=e,t=document.querySelector("head"),t.appendChild(n)}}});
+define(function(){return{loadCss:function(url){var link,head;link=document.createElement("link"),link.rel="stylesheet",link.href=url,head=document.querySelector("head"),head.appendChild(link)}}});

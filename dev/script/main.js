@@ -4,13 +4,12 @@
 window.loading={
     finish:function(callback){
         //保留这个方法做一些加载完成后的处理，比如可以在这里结束加载动画
-        console.log("domReady!");
         callback();
     },
     load:function(){
         // var domain='https://865077695.github.io/admin/';
         var domain='';
-        baseUrl = domain+'res';
+        var baseUrl = domain+'res';
         require.config({
             baseUrl:baseUrl,
             paths:{

@@ -1,1 +1,1 @@
-define(["require","angular","asyncLoader","uiRouter","angular-nice-bar"],function(r,e){var a=r("asyncLoader"),n=e.module("app",["ui.router","ngNiceBar"]);return a.configure(n),n});
+define(["require","angular","asyncLoader","uiRouter","angular-nice-bar"],function(require,angular){var asyncLoader=require("asyncLoader"),app=angular.module("app",["ui.router","ngNiceBar"]);return asyncLoader.configure(app),app});

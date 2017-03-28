@@ -1,10 +1,8 @@
 /**
  * Created by zzq on 2017/3/27.
  */
-define(['require','app','myService'],function(require,app,myService){
-    console.log('directive');
-    console.log(app);
-    console.log(myService);
+define(['require','app','myService'],function(require,app){
+    
     app.directive('appTop',function(){
         return {
             restrict:'AE',
@@ -15,7 +13,7 @@ define(['require','app','myService'],function(require,app,myService){
                 console.log(111);
                 myService.getJson('res/json/topNavitems.json')
                     .success(function(data){
-                        console.log(data)
+                        console.log(data);
                         $scope.topNavItem = data.navItem;
                     });
             }

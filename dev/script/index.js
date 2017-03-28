@@ -3,7 +3,6 @@
  */
 define(["require", "layer"], function (require,layer)
 {
-    console.log('index.js');
     layer.config({
         path: './res/lib/layer/'              //layer.js的文件路径,注意加斜杠
     });
@@ -15,7 +14,6 @@ define(["require", "layer"], function (require,layer)
     require(["angular","routes","myDirective"],function(angular){
         require(['domReady!'], function (document)
         {     //domReady依赖的!前缀来强制require()回调函数在执行之前等待DOM Ready。
-        
             /*手工启动angular*/
             window.loading.finish(function ()
             {

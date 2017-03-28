@@ -13,7 +13,7 @@ define(['require','app'],function(require,app){
                 method: "GET",
                 url: url
             });
-        }
+        };
         return service;
     });
 })

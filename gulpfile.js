@@ -16,7 +16,11 @@ var gulp = require('gulp'),
     
     imageminOptipng = require('imagemin-optipng'),
     
-    browserSync = require('browser-sync').create();
+    browserSync = require('browser-sync').create(),
+    
+    eslint = require('gulp-eslint');
+
+
 
 
 //设置各种输入输出文件夹的位置;
@@ -51,15 +55,24 @@ var srcScript = 'dev/script/*.js',
 
 
 //处理JS文件:压缩,然后换个名输出;
+//
+gulp.task('lint', function() {
+    return gulp.src(srcScript)
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError());
+});
+
 
 //命令行使用gulp script启用此任务;
-
 gulp.task('script', function ()
 {
     
     gulp.src(srcScript)
         
-        .pipe(uglify())
+        .pipe(uglify(
+            {mangle: false}//排除混淆关键字
+        ))
         
         .pipe(gulp.dest(dstScript));
     
