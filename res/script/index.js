@@ -8,6 +8,7 @@ define(["require", "layer"], function (require,layer)
         path: './res/lib/layer/'              //layer.js的文件路径,注意加斜杠
     });
     
+    
     require(["angular","routes","myDirective"],function(angular){
         
         var loadDom = layer.load(1, {
