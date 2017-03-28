@@ -15,7 +15,7 @@ window.loading={
             paths:{
                 "domReady":"lib/require/domReady.min",
                 "layer":"lib/layer/layer",
-                "angular":"lib/angular/angular",
+                "angular":"lib/angular/angular.min",
                 "uiRouter":"lib/angular/angular-ui-router",
                 "angular-nice-bar":"lib/angular/angular-nice-bar",
                 "asyncLoader":"lib/angular/angular-async-loader",
