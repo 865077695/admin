@@ -45,9 +45,9 @@ var srcScript = 'dev/script/*.js',
     
     dstImage = 'res/img/',
     
-    srcHtml = 'dev/**/*.html',
+    srcHtml = 'dev/tpl/*.*',
     
-    dstHtml = 'res/';
+    dstHtml = 'res/tpl/';
 
     srcJson = 'dev/**/*.json',
     

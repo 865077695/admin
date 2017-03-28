@@ -20,6 +20,8 @@ window.loading={
                 "angular-nice-bar":"lib/angular/angular-nice-bar",
                 "asyncLoader":"lib/angular/angular-async-loader",
                 "jquery":"lib/jquery/jquery.min",
+                "echarts":"lib/echarts/echarts.min",
+                "chinaMap":"lib/echarts/china",
                 "loadCss":"script/loadCss",
                 "routes":"script/routes",
                 "app":"script/app",
@@ -40,7 +42,8 @@ window.loading={
                 },
                 "angular-nice-bar":{
                     deps:["angular"]
-                }
+                },
+                "echarts":{"exports":"echarts"}
             },
             deps:['index']
         });

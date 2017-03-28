@@ -10,7 +10,9 @@ define(["require","app"],function(require,app){
         $stateProvider
             .state('home',{
                 url:'/home',
-                templateUrl:'res/tpl/home.html'
+                templateUrl:'res/tpl/userCollect.html',
+                controllerUrl:'tpl/userCollectController',
+                controller:'userCollectController'
             })
             .state('userList',{
                 url:'/userList',
@@ -20,7 +22,9 @@ define(["require","app"],function(require,app){
             })
             .state('userCollect',{
                 url:'/userCollect',
-                templateUrl:'res/tpl/userCollect.html'
+                templateUrl:'res/tpl/userCollect.html',
+                controllerUrl:'tpl/userCollectController',
+                controller:'userCollectController'
             })
             .state('productList',{
                 url:'/productList',
