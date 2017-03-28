@@ -41,7 +41,7 @@ var srcScript = 'dev/script/*.js',
     
     dstImage = 'res/img/',
     
-    srcHtml = 'dev/**/*.*',
+    srcHtml = 'dev/**/*.html',
     
     dstHtml = 'res/';
 
@@ -197,21 +197,9 @@ gulp.task('server', function ()
 
 gulp.task('auto', function ()
 {
-    gulp.watch(srcScript, ['script']);
+    gulp.watch(['dev/**/*.*','index.html'], ['script', 'css', 'less', 'imgmin', 'html', 'lib', 'json', 'server', 'auto']);
     
-    gulp.watch(srcCss, ['css']);
-    
-    gulp.watch(srcLess, ['less']);
-    
-    gulp.watch(srcImage, ['imgmin']);
-    
-    gulp.watch(srcHtml, ['html']);
-    
-    gulp.watch(srcLib, ['lib']);
-    
-    gulp.watch(srcJson, ['json']);
-    
-    gulp.watch(['dev/**/*.*','index.html']).on('change', browserSync.reload);
+    gulp.watch(['res/**/*.*','index.html']).on('change', browserSync.reload);
     
 });
 
@@ -219,6 +207,3 @@ gulp.task('auto', function ()
 //gulp默认任务(集体走一遍,然后开监控);
 
 gulp.task('default', ['script', 'css', 'less', 'imgmin', 'html', 'lib', 'json', 'server', 'auto']);
-gulp.task('-h',function(){
-    console.log("'gulp -h' ------------")
-})

@@ -1,1 +1,0 @@
-define(["require","app","directive"],function(e,i){});
