@@ -1,0 +1,15 @@
+{
+  "productList":[
+    {"ID":1,"column":"steady","productName":"产品A","productImg":"1.png","productDesc":"这是产品A","productPrice":"888","productStatus":"0"},
+    {"ID":2,"column":"radical","productName":"产品B","productImg":"1.png","productDesc":"这是产品A","productPrice":"888","productStatus":"0"},
+    {"ID":3,"column":"steady","productName":"产品C","productImg":"1.png","productDesc":"这是产品A","productPrice":"888","productStatus":"0"},
+    {"ID":4,"column":"steady","productName":"产品D","productImg":"1.png","productDesc":"这是产品A","productPrice":"888","productStatus":"0"},
+    {"ID":5,"column":"radical","productName":"产品E","productImg":"1.png","productDesc":"这是产品A","productPrice":"888","productStatus":"0"},
+    {"ID":6,"column":"steady","productName":"产品F","productImg":"1.png","productDesc":"这是产品A","productPrice":"888","productStatus":"0"},
+    {"ID":7,"column":"radical","productName":"产品G","productImg":"1.png","productDesc":"这是产品A","productPrice":"888","productStatus":"0"},
+    {"ID":8,"column":"steady","productName":"产品H","productImg":"1.png","productDesc":"这是产品A","productPrice":"888","productStatus":"0"},
+    {"ID":9,"column":"steady","productName":"产品I","productImg":"1.png","productDesc":"这是产品A","productPrice":"888","productStatus":"0"},
+    {"ID":10,"column":"radical","productName":"产品J","productImg":"1.png","productDesc":"这是产品A","productPrice":"888","productStatus":"0"}
+  ],
+  "page":"1"
+}

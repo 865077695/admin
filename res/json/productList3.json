@@ -1,0 +1,8 @@
+{
+  "productList":[
+    {"ID":21,"column":"radical","productName":"产品U","productImg":"1.png","productDesc":"这是产品A","productPrice":"888","productStatus":"0"},
+    {"ID":22,"column":"steady","productName":"产品V","productImg":"1.png","productDesc":"这是产品A","productPrice":"888","productStatus":"0"},
+    {"ID":23,"column":"radical","productName":"产品W","productImg":"1.png","productDesc":"这是产品A","productPrice":"888","productStatus":"0"}
+  ],
+  "page":3
+}
