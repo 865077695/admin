@@ -7,6 +7,7 @@ define(function(require){
     app.controller('productListController',function($scope,myService){
         $scope.model = function(){
             var addProduct = layer.open({
+                title:'标题',
                 type:2,
                 content:'res/tpl/addProduct.html',
                 area:['800px','500px'],
