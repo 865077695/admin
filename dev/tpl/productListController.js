@@ -3,8 +3,6 @@
  */
 define(function(require){
     var app = require('app');
-    var loadCss = require('loadCss');
-    loadCss.loadCss('res/lib/ngDialog/css/ngDialog.min.css');
     require('myService');
     app.controller('productListController',function($scope,myService){
         $scope.model = function(){
