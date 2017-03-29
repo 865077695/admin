@@ -12,6 +12,8 @@ nav{border-bottom: 5px solid #223;}
 
 .content{position:absolute;right:0;bottom:0;top:0px;left:150px;overflow: hidden;}
 .content-title{background: #eee;line-height: 50px;text-indent: 1em;}
+.content-body{padding: 0 8px}
 
 #userCollect{position:absolute;top:60px;left:0;right:0;bottom:0;}
 
+.search{margin-top: 20px;margin-bottom: 20px;}

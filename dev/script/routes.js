@@ -28,7 +28,9 @@ define(["require","app"],function(require,app){
             })
             .state('productList',{
                 url:'/productList',
-                templateUrl:'res/tpl/productList.html'
+                templateUrl:'res/tpl/productList.html',
+                controllerUrl:'tpl/productListController',
+                controller:'productListController'
             })
             .state('orderList',{
                 url:'/orderList',
