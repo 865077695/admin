@@ -4,7 +4,7 @@
         <div class="item" ng-repeat="Item in leftItem">
             <div class="title" ng-click="toggle($index)">{{ Item.name }}</div>
             <div class="detail" ng-show="Item.isShow">
-                <div class="subItem" ng-repeat="subName in Item.subName"><a ui-sref="{{ subName.subUrl }}">{{ subName.name }}</a></div>
+                <div class="subItem" ng-repeat="subName in Item.subName"><a ng-click="dosth()" ui-sref="{{ subName.subUrl }}">{{ subName.name }}</a></div>
             </div>
         </div>
     </div>

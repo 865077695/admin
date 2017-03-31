@@ -1,0 +1,1 @@
+define(function(require){var app=require("app");require("myService"),app.controller("orderListController",function($scope,myService){})});

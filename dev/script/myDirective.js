@@ -26,6 +26,9 @@ define(['require','app','myService'],function(require,app){
                 scope:{},
                 templateUrl:'res/tpl/app-left.html',
                 controller:function($scope,myService){
+                    $scope.dosth=function(){
+                        console.log("layer:"+layer);
+                    };
                     myService.getJson('res/json/app-left.json')
                         .success(function(data){
                             console.log(data);
@@ -35,7 +38,7 @@ define(['require','app','myService'],function(require,app){
                 link:function(scope,ele,attr){
                     scope.toggle = function(index){
                         scope.leftItem[index].isShow = !scope.leftItem[index].isShow;
-                    }
+                    };
                 }
             }
         })

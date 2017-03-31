@@ -1,6 +1,9 @@
 html,body{height:100%;overflow: auto}
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+.title{cursor: pointer;}
 a{ text-decoration:none; }
-
+.icon{font-size:14px;}
+.active{color:#449d44;}
 nav{border-bottom: 5px solid #223;}
 
 .left{position:fixed;top:55px;bottom:0;width:100%}

@@ -1,5 +1,12 @@
 <p class="content-title">产品列表</p>
 <div class="content-body">
+    
+    <!--<div class="export text-right">-->
+        <!--<button class="btn btn-success" ng-click="exportExcel()">导出Excel</button>-->
+        <!--<button class="btn btn-success">导出png</button>-->
+        <!--<button class="btn btn-success">导出pdf</button>-->
+    <!--</div>-->
+    
     <div class="search clearfix">
         <div class="pull-left" style="line-height: 34px;text-indent: 2em">输入产品名： </div>
         <div class="pull-left"><input class="form-control" placeholder="请输入关键字"></div>
@@ -7,7 +14,7 @@
         <div class="pull-right"><button class="btn btn-primary" ng-click="model()">添加产品</button></div>
     </div>
     
-    <table class="table table-bordered">
+    <table id="productList" class="table table-bordered">
         <tr>
             <th>口</th>
             <th>ID</th>
@@ -27,7 +34,7 @@
             <td><img src="res/img/{{ product.productImg }}" alt="缩略图" title="缩略图" width="50" height="20"></td>
             <td>{{ product.productDesc }}</td>
             <td>{{ product.productPrice }}</td>
-            <td>{{ product.productStatus == '0'?'暂停销售':'正在发售' }}</td>
+            <td ng-click="product.productStatus = !product.productStatus" ng-class="{active:product.productStatus}">{{ product.productStatus ? '正在发售':'暂停销售' }} <i class="icon ion-ios-circle-filled"></i></td>
             <td></td>
         </tr>
     </table>

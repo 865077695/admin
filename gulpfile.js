@@ -25,9 +25,9 @@ var gulp = require('gulp'),
 
 //设置各种输入输出文件夹的位置;
 
-var srcScript = 'dev/script/*.js',
+var srcScript = 'dev/**/*.js',
     
-    dstScript = 'res/script/',
+    dstScript = 'res/',
     
     srcLib = 'dev/lib/**/*.*',
     
@@ -45,7 +45,7 @@ var srcScript = 'dev/script/*.js',
     
     dstImage = 'res/img/',
     
-    srcHtml = 'dev/tpl/*.*',
+    srcHtml = 'dev/tpl/*.html',
     
     dstHtml = 'res/tpl/';
 
@@ -53,9 +53,7 @@ var srcScript = 'dev/script/*.js',
     
     dstJson = 'res/';
 
-
-//处理JS文件:压缩,然后换个名输出;
-//
+//js检错。
 gulp.task('lint', function() {
     return gulp.src(srcScript)
         .pipe(eslint())
@@ -63,7 +61,7 @@ gulp.task('lint', function() {
         .pipe(eslint.failAfterError());
 });
 
-
+//处理JS文件:压缩,然后换个名输出;
 //命令行使用gulp script启用此任务;
 gulp.task('script', function ()
 {
@@ -205,18 +203,21 @@ gulp.task('server', function ()
 
 
 //监控改动并自动刷新任务;
-
 //命令行使用gulp auto启动;
-
 gulp.task('auto', function ()
 {
-    gulp.watch(['dev/**/*.*','index.html'], ['script', 'css', 'less', 'imgmin', 'html', 'lib', 'json', 'server', 'auto']);
+    gulp.watch(srcScript,['script']);
+    gulp.watch(srcCss,['css']);
+    gulp.watch(srcLib,['lib']);
+    gulp.watch(srcLess,['less']);
+    gulp.watch(srcImage,['imgmin']);
+    gulp.watch(srcHtml,['html']);
+    gulp.watch(srcJson,['json']);
+    // gulp.watch(['dev/**/*.*','index.html'], ['script', 'css', 'less', 'imgmin', 'html', 'lib', 'json', 'server', 'auto']);
     
     gulp.watch(['res/**/*.*','index.html']).on('change', browserSync.reload);
     
 });
 
-
 //gulp默认任务(集体走一遍,然后开监控);
-
 gulp.task('default', ['script', 'css', 'less', 'imgmin', 'html', 'lib', 'json', 'server', 'auto']);

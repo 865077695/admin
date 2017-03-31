@@ -20,7 +20,7 @@ define(function(require){
             showUserList('res/json/userList1.json');
         };
         $scope.nextPage = function(){
-            showUserList('res/json/userList2.json')
+            showUserList('res/json/userList2.json');
         }
     })
 })

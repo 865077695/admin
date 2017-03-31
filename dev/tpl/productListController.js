@@ -5,21 +5,13 @@ define(function(require){
     var app = require('app');
     require('myService');
     app.controller('productListController',function($scope,myService){
+        $scope.exportExcel = function(){
+            
+        }
+        
         $scope.model = function(){
-            var addProduct = layer.open({
-                title:'标题',
-                type:2,
-                content:'res/tpl/addProduct.html',
-                area:['800px','500px'],
-                btn:['提交','返回'],
-                yes:function(){
-                    console.log('yes');
-                    layer.close(addProduct);
-                },
-                btn2:function(){
-                    console.log('no');
-                }
-            })
+            //model框，填写添加信息
+            
         };
         myService.getJson('res/json/productList1.json')
             .success(function(data){

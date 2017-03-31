@@ -1,7 +1,8 @@
 /**
  * Created by zzq on 2017/3/24.
  */
-define(['require','app'],function(require,app){
+define(['require', 'app'], function (require, app)
+{
     //服务，存放全局数据
     app.factory('myService', function ($http)
     {

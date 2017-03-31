@@ -34,7 +34,9 @@ define(["require","app"],function(require,app){
             })
             .state('orderList',{
                 url:'/orderList',
-                templateUrl:'res/tpl/orderList.html'
+                templateUrl:'res/tpl/orderList.html',
+                controllerUrl:'tpl/orderListController',
+                controller:'orderListController'
             })
             .state('articleList',{
                 url:'/articleList',
