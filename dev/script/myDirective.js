@@ -10,7 +10,6 @@ define(['require','app','myService'],function(require,app){
             scope:{},
             templateUrl: 'res/tpl/header.html',
             controller: function($scope,myService){
-                console.log(111);
                 myService.getJson('res/json/topNavitems.json')
                     .success(function(data){
                         console.log(data);
@@ -27,7 +26,7 @@ define(['require','app','myService'],function(require,app){
                 templateUrl:'res/tpl/app-left.html',
                 controller:function($scope,myService){
                     $scope.dosth=function(){
-                        console.log("layer:"+layer);
+                        // console.log("layer:"+layer);
                     };
                     myService.getJson('res/json/app-left.json')
                         .success(function(data){

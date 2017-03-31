@@ -1,7 +1,19 @@
 html,body{height:100%;overflow: auto}
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 .title{cursor: pointer;}
-a{ text-decoration:none; }
+a{ text-decoration:none;}
+/*loading*/
+#box{position:fixed;width:60px;height:50px;top:50%;left:50%;margin-left: -30px;margin-top: -30px;box-sizing: border-box;}
+#box1{width:70px;height:30px;border:1px solid #9d9d9d;box-sizing: border-box;position:absolute;top:50%;left: 50%;margin-left: -20px;margin-top: -15px;}
+#box2{width:10px;height:10px;border:1px solid #737373;box-sizing: border-box;position:absolute;animation:load 1.5s linear infinite;-webkit-animation:load 1.5s linear infinite;}
+@keyframes load {
+    0%{left:0;top:0;background: red;}
+    25%{left:79px;top:0px;background: green;}
+    50%{left:79px;top:39px;background: yellow;}
+    75%{left:0;top:39px;background: yellow;}
+    100%{left:0;top:0;background: red;}
+}
+
 .icon{font-size:14px;}
 .active{color:#449d44;}
 nav{border-bottom: 5px solid #223;}

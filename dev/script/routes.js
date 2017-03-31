@@ -3,6 +3,7 @@
  * 配置路由
  */
 define(["require","app"],function(require,app){
+    var load = require('load');
     //配置路由
     app.config(function($stateProvider,$urlRouterProvider){
         $urlRouterProvider.otherwise('/home'),
@@ -56,4 +57,11 @@ define(["require","app"],function(require,app){
             });
     });
     //配置路由结束
+    //路由事件
+    app.run(function($rootScope,$state,$location){
+        $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
+            console.log(111);
+            // load.onLoading();
+        })
+    })
 })

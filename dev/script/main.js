@@ -14,7 +14,6 @@ window.loading={
             baseUrl:baseUrl,
             paths:{
                 "domReady":["https://cdn.bootcss.com/require-domReady/2.0.1/domReady.min","lib/require/domReady.min"],
-                "layer":"lib/layer/layer",
                 "angular":["https://cdn.bootcss.com/angular.js/1.3.20/angular.min","lib/angular/angular.min"],
                 "angularTouch":["https://cdn.bootcss.com/angular.js/1.3.20/angular-touch.min","lib/angular/angular-touch.min"],
                 "angularAnimate":["https://cdn.bootcss.com/angular.js/1.3.20/angular-animate.min","lib/angular/angular-animate.min"],
@@ -26,6 +25,7 @@ window.loading={
                 "echarts":["https://cdn.bootcss.com/echarts/3.4.0/echarts.min","lib/echarts/echarts.min"],
                 "chinaMap":"lib/echarts/china",
                 "loadCss":"script/loadCss",
+                'load':"lib/load",
                 "routes":"script/routes",
                 "app":"script/app",
                 "index":"script/index",
@@ -49,9 +49,8 @@ window.loading={
                 "uiBootstrap":{
                     deps:["angular","angularTouch","angularAnimate"]
                 },
-                "layer":{
-                    deps:['jquery'],
-                    exports:"layer"
+                "load":{
+                    exports:"load"
                 },
                 "angular-nice-bar":{
                     deps:["angular"]

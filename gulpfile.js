@@ -221,3 +221,4 @@ gulp.task('auto', function ()
 
 //gulp默认任务(集体走一遍,然后开监控);
 gulp.task('default', ['script', 'css', 'less', 'imgmin', 'html', 'lib', 'json', 'server', 'auto']);
+// gulp.task('default', ['script', 'css', 'less', 'imgmin', 'html', 'lib', 'json']);
