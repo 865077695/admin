@@ -12,7 +12,6 @@ define(['require','app','myService'],function(require,app){
             controller: function($scope,myService){
                 myService.getJson('res/json/topNavitems.json')
                     .success(function(data){
-                        console.log(data);
                         $scope.topNavItem = data.navItem;
                     });
             }
@@ -30,7 +29,6 @@ define(['require','app','myService'],function(require,app){
                     };
                     myService.getJson('res/json/app-left.json')
                         .success(function(data){
-                            console.log(data);
                             $scope.leftItem = data.leftItem;
                         })
                 },
@@ -47,7 +45,11 @@ define(['require','app','myService'],function(require,app){
                 replace:true,
                 scope:{},
                 templateUrl: 'res/tpl/app-content.html',
-                controller:function(){}
+                controller:function($scope,$state,$rootScope){
+                    $rootScope.$on('$stateChangeStart', function(evt, current, previous) {
+                        console.log(111);
+                    });
+                }
             }
         })
 })

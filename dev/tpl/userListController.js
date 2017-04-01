@@ -9,7 +9,6 @@ define(function(require){
             myService.getJson(url)
                 .success(function(data){
                     $scope.userList = data.userList;
-                    console.log(data.userList);
                 })
                 .error(function(){
                     console.log('error...');
