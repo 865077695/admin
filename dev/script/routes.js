@@ -8,10 +8,10 @@ define(["require","app"],function(require,app){
     app.run(function($rootScope,$state){
         // $rootScope.$state = $state;
         $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams){
-            
-            console.log(111);           //why cannot?
-            // load.onLoading();        //loading animate..
-            console.log(toState.name);
+            load.onLoading();        //loading animate..
+        });
+        $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams){
+            load.close();           //close animate
         })
     });
     //配置路由

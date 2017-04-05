@@ -4,6 +4,7 @@
 define(["require", "load"], function (require,load)
 {
     load.onLoading();
+    console.log(load)
     require(["angular","routes","myDirective"],function(angular){
         require(['domReady!'], function (document)
         {     //domReady依赖的!前缀来强制require()回调函数在执行之前等待DOM Ready。

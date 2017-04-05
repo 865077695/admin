@@ -18,7 +18,7 @@ window.loading={
                 "angularTouch":["https://cdn.bootcss.com/angular.js/1.3.20/angular-touch.min","lib/angular/angular-touch.min"],
                 "angularAnimate":["https://cdn.bootcss.com/angular.js/1.3.20/angular-animate.min","lib/angular/angular-animate.min"],
                 "uiBootstrap":["https://cdn.bootcss.com/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min","lib/angular/ui-bootstrap-tpls.min"],
-                "uiRouter":["https://cdn.bootcss.com/angular-ui-router/1.0.0-rc.1/angular-ui-router.min","lib/angular/angular-ui-router"],
+                "uiRouter":["https://cdn.bootcss.com/angular-ui-router/0.4.2/angular-ui-router.min","lib/angular/angular-ui-router.min"],
                 "angular-nice-bar":"lib/angular/angular-nice-bar",
                 "asyncLoader":"lib/angular/angular-async-loader",
                 "jquery":["https://cdn.bootcss.com/jquery/1.12.4/jquery.min","lib/jquery/jquery.min"],
