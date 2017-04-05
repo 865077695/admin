@@ -8,22 +8,19 @@ var load = (function ()
     var load = {
         onLoading: function ()
         {
-            if(!document.getElementById('box')){
-                var box = document.createElement('div');
-                document.body.appendChild(box);
-                box.id = 'box';
-                box.innerHTML = "<div id='box1'>loading...</div><div id='box2'></div>"
+            if(!document.getElementById('loadBox')){
+                var loadBox = document.createElement('div');
+                document.body.appendChild(loadBox);
+                loadBox.id = 'loadBox';
+                loadBox.innerHTML = "<div id='box'><div id='box1'></div><div id='box2'></div></div>";
             }
         },
         close: function ()
         {
-            if(document.getElementById('box')){
-                var box = document.getElementById('box');
-                document.body.removeChild(box);
+            if(document.getElementById('loadBox')){
+                var loadBox = document.getElementById('loadBox');
+                document.body.removeChild(loadBox);
             }
-        },
-        addMethod:function(){
-            
         }
     }
     return load;

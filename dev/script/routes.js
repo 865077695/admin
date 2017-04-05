@@ -12,7 +12,7 @@ define(["require","app"],function(require,app){
         });
         $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams){
             load.close();           //close animate
-        })
+        });
     });
     //配置路由
     app.config(function($stateProvider,$urlRouterProvider){

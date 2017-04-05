@@ -10,6 +10,7 @@ define(['require', 'app'], function (require, app)
         //ajax获取json数据
         service.getJson = function (url)
         {
+            // load.onLoading();
             return $http({
                 method: "GET",
                 url: url

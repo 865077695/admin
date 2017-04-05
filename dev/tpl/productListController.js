@@ -4,6 +4,7 @@
 define(function(require){
     var app = require('app');
     require('myService');
+    require('load');
     app.controller('productListController',function($scope,myService){
         $scope.exportExcel = function(){
             
@@ -15,20 +16,27 @@ define(function(require){
         };
         myService.getJson('res/json/productList1.json')
             .success(function(data){
+                load.close();
                 $scope.page = data.page;
                 $scope.productList = data.productList;
+                
                 $scope.nextPage = function(){
+                    load.onLoading();
                     $scope.url = 'res/json/productList'+(++$scope.page)+'.json';
                     myService.getJson($scope.url)
                         .success(function(data){
+                            load.close();
                             $scope.page = data.page;
                             $scope.productList = data.productList;
                         })
                 };
+                
                 $scope.prevPage = function(){
+                    load.onLoading();
                     $scope.url = 'res/json/productList'+(--$scope.page)+'.json';
                     myService.getJson($scope.url)
                         .success(function(data){
+                            load.close();
                             $scope.page = data.page;
                             $scope.productList = data.productList;
                         })
